@@ -1,29 +1,15 @@
 import { Quote, Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
-export default function TestimonialsPreview() {
+export default function TestimonialsGrid() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-[var(--delux-cream)] py-20">
       <div className="container-delux">
-        <div className="section-title">
-          <span className="section-eyebrow">Client Experiences</span>
-
-          <h2>
-            What Our <span>Clients Say</span>
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            We value the relationships we build with schools, organizations
-            and families. Here is what our clients have to say about working
-            with Delux Kidzplay.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.id}
-              className="relative rounded-[30px] bg-[var(--delux-cream)] p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="relative rounded-[30px] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div
                 className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full text-white"
@@ -43,11 +29,11 @@ export default function TestimonialsPreview() {
                 ))}
               </div>
 
-              <p className="mt-6 min-h-[130px] text-sm leading-7 text-slate-600">
+              <blockquote className="mt-6 min-h-[150px] text-base leading-7 text-slate-600">
                 “{testimonial.quote}”
-              </p>
+              </blockquote>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-slate-200 pt-5">
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
                 <div
                   className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-black text-white"
                   style={{ background: testimonial.accent }}
@@ -67,15 +53,6 @@ export default function TestimonialsPreview() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <a
-            href="/testimonials"
-            className="font-black text-[var(--delux-green-dark)] hover:underline"
-          >
-            Read More Client Experiences →
-          </a>
         </div>
       </div>
     </section>
